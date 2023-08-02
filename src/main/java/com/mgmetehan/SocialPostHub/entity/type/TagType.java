@@ -6,9 +6,11 @@ import lombok.Getter;
 @Getter
 @AllArgsConstructor
 public enum TagType {
-    UPVOTE(1L, 1L),
-    DOWNVOTE(2L, 2L),
-    UNVOTE(3L, 3L);
+
+    FINANCE(1L, 1L),
+    HEALTH(2L, 2L),
+    EDUCATION(3L, 3L),
+    TECHNOLOGY(4L, 4L);
 
     private final Long databaseId;
     private final Long displayId;
