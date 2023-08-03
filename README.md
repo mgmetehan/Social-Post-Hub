@@ -1,5 +1,7 @@
 # Social-Post-Hub
 
+# Diagram:
+![img.png](img.png)
 <h2> Tablolar arasindaki iliskileri kisaca aciklamak gerekirse: </h2> 
 <br>
 
@@ -48,12 +50,12 @@
 |... | ...     | ...             | ...      |
 
 ### POST_COMMENT Table:
-| ID | review     | POST_ID |
-|----|------------|---------|
-| 1  | Great post | 1       |
-| 2  | Thanks!    | 2       |
-| 3  | Awesome    | 1       |
-|... | ...        | ...     |
+| ID | review     | POST_ID | USER_ID |
+|----|------------|---------|---------|
+| 1  | Great post | 1       | 1       |
+| 2  | Thanks!    | 2       | 1       |  
+| 3  | Awesome    | 1       | 2       |  
+|... | ...        | ...     | ...     |  
 
 ### POST Table:
 | ID | title  |
