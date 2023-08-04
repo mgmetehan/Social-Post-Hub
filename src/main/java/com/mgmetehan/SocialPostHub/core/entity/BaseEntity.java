@@ -1,4 +1,4 @@
-package com.mgmetehan.SocialPostHub.core;
+package com.mgmetehan.SocialPostHub.core.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;

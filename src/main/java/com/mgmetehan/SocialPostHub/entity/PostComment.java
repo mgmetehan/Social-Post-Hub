@@ -1,6 +1,6 @@
 package com.mgmetehan.SocialPostHub.entity;
 
-import com.mgmetehan.SocialPostHub.core.BaseEntity;
+import com.mgmetehan.SocialPostHub.core.entity.BaseEntity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;

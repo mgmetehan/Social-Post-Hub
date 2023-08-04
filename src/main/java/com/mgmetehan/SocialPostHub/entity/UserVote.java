@@ -1,6 +1,6 @@
 package com.mgmetehan.SocialPostHub.entity;
 
-import com.mgmetehan.SocialPostHub.core.BaseEntity;
+import com.mgmetehan.SocialPostHub.core.entity.BaseEntity;
 import com.mgmetehan.SocialPostHub.entity.type.VoteType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

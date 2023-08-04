@@ -1,6 +1,8 @@
 package com.mgmetehan.SocialPostHub.service.impl;
 
 import com.mgmetehan.SocialPostHub.converter.UsersConverter;
+import com.mgmetehan.SocialPostHub.core.exception.ErrorStatusCode;
+import com.mgmetehan.SocialPostHub.core.exception.GeneralException;
 import com.mgmetehan.SocialPostHub.entity.Users;
 import com.mgmetehan.SocialPostHub.repository.UsersRepository;
 import com.mgmetehan.SocialPostHub.service.UsersService;
@@ -41,7 +43,7 @@ public class UserServiceImpl implements UsersService {
         log.info("UserServiceImpl -> getById is started, id: {}", id);
         Optional<Users> user = usersRepository.findById(id);
         if (user.isEmpty()) {
-            throw new RuntimeException("User not found");
+            throw new GeneralException(ErrorStatusCode.NOT_FOUND);
         }
         log.info("UserServiceImpl -> getById is finished, user: {}", user);
         return usersConverter.toResponse(user.get());
