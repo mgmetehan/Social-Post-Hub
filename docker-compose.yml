@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: socialPostHub
+    ports:
+      - "5432:5432"
+    networks:
+      - socialPostHub-network
+
+  spring-boot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    networks:
+      - socialPostHub-network
+
+networks:
+  socialPostHub-network:
+    driver: bridge
