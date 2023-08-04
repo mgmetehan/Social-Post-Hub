@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Getter
@@ -19,20 +20,30 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class User extends BaseEntity {
+public class Users extends BaseEntity {
 
     private String firstName;
     private String lastName;
     private String email;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserVote> userVotes;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PostComment> postComments;
 
     @Override
     public <T extends BaseEntity> void update(T entity) {
+        var users = (Users) entity;
 
+        if (Objects.nonNull(users.getFirstName())) {
+            firstName = users.getFirstName();
+        }
+        if (Objects.nonNull(users.getLastName())) {
+            lastName = users.getLastName();
+        }
+        if (Objects.nonNull(users.getEmail())) {
+            email = users.getEmail();
+        }
     }
 }

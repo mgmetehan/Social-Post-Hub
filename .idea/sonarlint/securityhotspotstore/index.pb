@@ -8,26 +8,10 @@ Lsrc/test/java/com/mgmetehan/SocialPostHub/SocialPostHubApplicationTests.java,e
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
-w
-Gsrc/main/java/com/mgmetehan/SocialPostHub/SocialPostHubApplication.java,4/2/42bc27b4eb06e435454272028642c1af3fcc31c1
-n
->src/main/java/com/mgmetehan/SocialPostHub/core/BaseEntity.java,b/e/bee9d1016c9fdf56fe5021d90b0e35707f41c89d
 s
 Csrc/main/java/com/mgmetehan/SocialPostHub/entity/type/VoteType.java,2/9/29d0c8a8e379a7188847a06fcd020f579384344c
 r
 Bsrc/main/java/com/mgmetehan/SocialPostHub/entity/type/TagType.java,8/0/8098437b09814a1070cfd9e9b6e01725bd6ae973
-j
-:src/main/java/com/mgmetehan/SocialPostHub/entity/User.java,7/6/76d35d9a5b1fe4ca14a4d2677d2014ed37dd9133
-n
->src/main/java/com/mgmetehan/SocialPostHub/entity/UserVote.java,4/6/465191909baa803d6bd52a2c435f5a41826c3712
-j
-:src/main/java/com/mgmetehan/SocialPostHub/entity/Post.java,5/2/52486f5eae44e1b5f8ead2ad5401ad4e506193d0
-i
-9src/main/java/com/mgmetehan/SocialPostHub/entity/Tag.java,c/4/c4fa024acd16d295eb86d4cf3889ffd354e0d87b
-m
-=src/main/java/com/mgmetehan/SocialPostHub/entity/PostTag.java,5/d/5d954800a58843307ea73a069b7796a859c4506c
-q
-Asrc/main/java/com/mgmetehan/SocialPostHub/entity/PostComment.java,f/2/f2939991782f194293cf034d067fc7302e3ce1d0
 4
 mvnw,5/d/5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d
 9
