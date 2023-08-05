@@ -7,6 +7,8 @@ import com.mgmetehan.SocialPostHub.shared.model.response.UsersResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,10 +27,14 @@ import java.util.List;
 public class UserController {
 
     private final UsersService usersService;
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+
 
     //crud allget
     @PostMapping
     public ResponseEntity<UsersResponse> create(@RequestBody UsersRequest newUsers) {
+        kafkaTemplate.send("users", newUsers.getFirstName());
         return ResponseEntity.status(HttpStatus.CREATED).body(usersService.create(newUsers));
     }
 
@@ -52,5 +58,10 @@ public class UserController {
     @PutMapping
     public ResponseEntity<UsersResponse> update(@RequestBody UsersUpdateRequest updateUsers) {
         return ResponseEntity.status(HttpStatus.OK).body(usersService.update(updateUsers));
+    }
+
+    @KafkaListener(topics = "users", groupId = "group_id")
+    public void consume(String message) {
+        System.out.println("Consumed message: " + message);
     }
 }
