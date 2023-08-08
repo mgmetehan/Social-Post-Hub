@@ -29,9 +29,6 @@ public class UserController {
     private final UsersService usersService;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-
-
-    //crud allget
     @PostMapping
     public ResponseEntity<UsersResponse> create(@RequestBody UsersRequest newUsers) {
         kafkaTemplate.send("users", newUsers.getFirstName());

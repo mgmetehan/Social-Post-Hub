@@ -7,8 +7,6 @@ import com.mgmetehan.SocialPostHub.shared.model.response.UsersResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.nio.channels.Pipe;
-
 @Component
 @RequiredArgsConstructor
 public class UsersConverter {
@@ -18,6 +16,7 @@ public class UsersConverter {
         users.setFirstName(usersRequest.getFirstName());
         users.setLastName(usersRequest.getLastName());
         users.setEmail(usersRequest.getEmail());
+
         return users;
     }
 
@@ -27,6 +26,7 @@ public class UsersConverter {
         users.setFirstName(usersUpdateRequest.getFirstName());
         users.setLastName(usersUpdateRequest.getLastName());
         users.setEmail(usersUpdateRequest.getEmail());
+
         return users;
     }
 
@@ -35,6 +35,8 @@ public class UsersConverter {
         usersResponse.setFirstName(users.getFirstName());
         usersResponse.setLastName(users.getLastName());
         usersResponse.setEmail(users.getEmail());
+        usersResponse.setCreatedAt(String.valueOf(users.getCreatedAt()));
+
         return usersResponse;
     }
 

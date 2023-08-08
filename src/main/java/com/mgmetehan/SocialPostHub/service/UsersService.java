@@ -16,4 +16,8 @@ public interface UsersService {
     UsersResponse delete(String id);
 
     UsersResponse update(UsersUpdateRequest updateUsers);
+
+    List<String> getAllFirstNames();
+
+    List<String> getAllEmails();
 }

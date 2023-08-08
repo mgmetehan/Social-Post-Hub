@@ -20,8 +20,10 @@ public class KafkaBean {
     @Bean
     public KafkaAdmin kafkaAdmin() {
         log.info("bootstrapServers: {}", bootstrapServers);
+
         Map<String, Object> map = new HashMap<>();
         map.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+
         return new KafkaAdmin(map);
     }
 }

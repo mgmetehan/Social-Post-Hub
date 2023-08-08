@@ -16,6 +16,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         errors.put("error", exception.getMessage());
         errors.put("status", exception.getCode());
         errors.put("repeatable", exception.getRepeatable().toString());
+
         return new ResponseEntity<>(errors, exception.getHttpStatus());
     }
 }

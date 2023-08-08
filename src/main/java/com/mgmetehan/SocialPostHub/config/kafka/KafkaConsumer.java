@@ -28,11 +28,13 @@ public class KafkaConsumer {
     public ConsumerFactory<String, Object> consumerFactory() {
         log.info("bootstrapServers: {}", bootstrapServers);
         log.info("groupId: {}", groupId);
+
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, groupId);
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringSerializer.class);
+
         return new DefaultKafkaConsumerFactory<>(props);
     }
 
@@ -40,6 +42,7 @@ public class KafkaConsumer {
     public ConcurrentKafkaListenerContainerFactory<String, Object> containerFactory() {
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(consumerFactory());
+
         return factory;
     }
 

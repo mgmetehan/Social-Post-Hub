@@ -16,6 +16,7 @@ public class UsersResponse {
     private String firstName;
     private String lastName;
     private String email;
+    private String createdAt;
     private List<UserVote> userVotes = new ArrayList<>();
     private List<PostComment> postComments = new ArrayList<>();
 }

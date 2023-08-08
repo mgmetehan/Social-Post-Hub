@@ -11,6 +11,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,6 +27,7 @@ public class Users extends BaseEntity {
     private String firstName;
     private String lastName;
     private String email;
+    private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "users", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<UserVote> userVotes;
